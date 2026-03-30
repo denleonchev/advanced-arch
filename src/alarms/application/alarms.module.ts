@@ -2,6 +2,8 @@ import { DynamicModule, Module, Type } from '@nestjs/common';
 import { AlarmsService } from './alarms.service';
 import { AlarmsController } from '../presenters/http/alarms.controller';
 import { AlarmFactory } from '../domain/factories/alarm.factory';
+import { CreateAlarmCommandHandler } from './commands/create-alarm.command.handler';
+import { GetAlarmQueryHandler } from './queries/get-alarm.query.handler';
 
 @Module({})
 export class AlarmsModule {
@@ -10,7 +12,12 @@ export class AlarmsModule {
       module: AlarmsModule,
       imports: [infrastructureModule],
       controllers: [AlarmsController],
-      providers: [AlarmsService, AlarmFactory],
+      providers: [
+        AlarmsService,
+        AlarmFactory,
+        CreateAlarmCommandHandler,
+        GetAlarmQueryHandler,
+      ],
     };
   }
 }
