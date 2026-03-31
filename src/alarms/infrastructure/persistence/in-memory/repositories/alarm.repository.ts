@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { AlarmRepository } from 'src/alarms/application/ports/alarm.repository';
 import { Alarm } from 'src/alarms/domain/alarm';
-import { AlarmEntity } from '../entities/alarm.entity';
 import { AlarmMapper } from '../mappers/alarm.mapper';
+import { AlarmEntity } from '../entities/alarm.entity';
 
 @Injectable()
 export class InMemoryAlarmRepository implements AlarmRepository {
