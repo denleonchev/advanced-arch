@@ -18,6 +18,7 @@ services:
 
   event-store:
     image: mongo:6.0.4
+    restart: always
     ports:
       - 27018:27017
     environment:
